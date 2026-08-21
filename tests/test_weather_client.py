@@ -38,7 +38,7 @@ def success_payload(city: str = "Kyiv") -> dict:
                         "avghumidity": 50.0,
                         "maxwind_kph": 15.0,
                     },
-                    "hour": [{"time": f"{today_str} {h:02d}:00", "wind_dir": "N"} for h in range(24)],
+                    "hour": [{"time": f"{today_str} {hour:02d}:00", "wind_dir": "N"} for hour in range(24)],
                 },
                 {  # tomorrow - index 1, this is what we want
                     "date": tomorrow_str,
