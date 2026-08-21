@@ -68,4 +68,5 @@ Tests use httpx.MockTransport, so no real HTTP requests are performed.
 
 ### Results
 The app displays a table of forecasts for the predefined cities:
-<img src="./images/img.png" width="600">
+
+<img src="./images/img.png" width="1200">
