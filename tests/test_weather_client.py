@@ -1,16 +1,18 @@
-"""Unit tests for weather_client.py using httpx.MockTransport (no real API calls).
+"""Unit tests for weather_forecast.client using httpx.MockTransport (no real API calls).
 
-Run with:  pytest test_weather_client.py -v
+Run with:  python -m pytest -v      (from the project root)
 """
 
 from __future__ import annotations
 
-from datetime import date, timedelta
 import httpx
 import pytest
 
-from config import Settings
-from weather_client import WeatherApiError, extract_next_day, fetch_forecast
+from weather_forecast.client import WeatherApiError, extract_next_day, fetch_forecast
+from weather_forecast.config import Settings
+from weather_forecast.models import ForecastResponse
+
+from datetime import date, timedelta
 
 
 def make_settings() -> Settings:
@@ -133,8 +135,6 @@ async def test_unexpected_shape_raises_weather_api_error():
 
 
 def test_extract_next_day_missing_index_raises():
-    from models import ForecastResponse
-
     payload = success_payload("Kyiv")
     payload["forecast"]["forecastday"] = payload["forecast"]["forecastday"][:1]  # only "today"
     forecast = ForecastResponse.model_validate(payload)

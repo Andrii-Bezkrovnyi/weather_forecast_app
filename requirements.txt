@@ -3,3 +3,7 @@ pydantic>=2.6
 pydantic-settings>=2.2
 python-dotenv>=1.0
 rich>=13.7
+
+# dev/test only
+pytest>=8.0
+pytest-asyncio>=0.23
