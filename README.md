@@ -65,3 +65,8 @@ Tests use httpx.MockTransport, so no real HTTP requests are performed.
 ### Development
 - Package: weather_forecast/
 - Entry point: main.py --> weather_forecast.cli.main()
+
+### Results
+The app displays a table of forecasts for the predefined cities:
+
+<img src="./images/img.png" width="1200">
